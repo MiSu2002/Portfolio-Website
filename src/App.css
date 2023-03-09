@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Poppins;
+  src: url('./assets/font/Poppins/Poppins-Regular.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, .App {
+  background-color: #0f0f0f;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.logo {
+  border-left: 2px solid teal;
+  height: 2vh;
+  -webkit-animation: appear 1s;
+  animation: appear 1s;
+  font-size: 1.5vh;
+  letter-spacing: 2px;
+  font-family: Poppins;
+}
+
+.name {
+  font-size: 7vh;
+  top: 31%;
+  -webkit-animation: slide-left 2s;
+  animation: slide-left 2s;
+  letter-spacing: 3px;
+}
+
+.borderBottom, .overview, .name {
+  width: 55vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.borderBottom {
+  border-bottom: 3px solid teal;
+  bottom: 58%;
+  -webkit-animation: slide-right 2s;
+  animation: slide-right 2s;
+}
+
+@-webkit-keyframes slide-right {
+  0% {
+    left: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes slide-right {
+  0% {
+    left: 0;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    left: 100%;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    left: 100%;
+  }
+}
+
+.overview {
+  font-size: 1.5vh;
+  bottom: 50%;
+  font-family: Poppins;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+  -webkit-animation: appear 2s;
+  animation: appear 2s;
+}
+
+@-webkit-keyframes appear {
+  0%, 50% {
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  0%, 50% {
+    opacity: 0;
+  }
+}
+
+body .indicator {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  animation: appear 3s;
+}
+body .indicator span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  animation: animate 1.5s linear infinite;
+}
+body .indicator span:nth-child(1) {
+  top: -13vh;
+  left: -13vh;
+  animation-delay: 0s;
+}
+body .indicator span:nth-child(2) {
+  top: -12vh;
+  left: -12vh;
+  animation-delay: 0.2s;
+}
+body .indicator span:nth-child(3) {
+  top: 0;
+  left: 0;
+  animation-delay: 0.4s;
+}
+body .indicator span:nth-child(4) {
+  top: 12vh;
+  left: 12vh;
+  animation-delay: 0.6s;
+}
+body .indicator span:nth-child(5) {
+  top: 13vh;
+  left: 13vh;
+  animation-delay: 0.8s;
+}
+@keyframes animate {
+  0% {
+    border-color: #fff;
+    transform: translate(0, 0);
+  }
+  20% {
+    border-color: #fff;
+    transform: translate(15px, 15px);
+  }
+  20.1%,
+  100% {
+    border-color: teal;
   }
 }
