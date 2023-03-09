@@ -106,13 +106,13 @@ body .indicator span {
   animation: animate 1.5s linear infinite;
 }
 body .indicator span:nth-child(1) {
-  top: -13vh;
-  left: -13vh;
+  top: -10vh;
+  left: -10vh;
   animation-delay: 0s;
 }
 body .indicator span:nth-child(2) {
-  top: -12vh;
-  left: -12vh;
+  top: -9vh;
+  left: -9vh;
   animation-delay: 0.2s;
 }
 body .indicator span:nth-child(3) {
@@ -121,13 +121,13 @@ body .indicator span:nth-child(3) {
   animation-delay: 0.4s;
 }
 body .indicator span:nth-child(4) {
-  top: 12vh;
-  left: 12vh;
+  top: 9vh;
+  left: 9vh;
   animation-delay: 0.6s;
 }
 body .indicator span:nth-child(5) {
-  top: 13vh;
-  left: 13vh;
+  top: 10vh;
+  left: 10vh;
   animation-delay: 0.8s;
 }
 @keyframes animate {
@@ -143,4 +143,22 @@ body .indicator span:nth-child(5) {
   100% {
     border-color: teal;
   }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 0.5s ease forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.active{
+  color: rgb(0, 172, 172);
 }
